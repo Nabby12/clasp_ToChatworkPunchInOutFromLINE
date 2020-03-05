@@ -2,7 +2,8 @@ const LINE_CHANNEL_ACCESSTOKEN: string = PropertiesService.getScriptProperties()
 const PUNCHIN_KEY: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_KEY');
 const PUNCHOUT_KEY: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_KEY');
 const PUNCHIN_MESSAGE_LINE: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_MESSAGE_LINE');
-const PUNCHIN_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_MESSAGE_CHATWORK');const PUNCHOUT_MESSAGE_LINE: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_LINE');
+const PUNCHIN_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_MESSAGE_CHATWORK');
+const PUNCHOUT_MESSAGE_LINE: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_LINE');
 const PUNCHOUT_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_CHATWORK');
 const CHATWORK_API_TOKEN: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_API_TOKEN');
 const CHATWORK_ROOMID: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_ROOMID');
