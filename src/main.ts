@@ -65,7 +65,7 @@ function doPost(e: string) {
 }
 
 function sendMessage(token,room_id,body){
-    var params = {
+    let params = {
         headers : {"X-ChatWorkToken" : token},
         method : "post",
         payload : {
@@ -73,6 +73,6 @@ function sendMessage(token,room_id,body){
         }
     };
     
-    var url = "https://api.chatwork.com/v2/rooms/" + room_id + "/messages";
+    let url: string = "https://api.chatwork.com/v2/rooms/" + room_id + "/messages";
     UrlFetchApp.fetch(url, params);   
 }
