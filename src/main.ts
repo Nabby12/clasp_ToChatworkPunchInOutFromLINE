@@ -1,8 +1,8 @@
 const LINE_CHANNEL_ACCESSTOKEN: string = PropertiesService.getScriptProperties().getProperty('LINE_CHANNEL_ACCESSTOKEN');
 const PUNCHIN_KEY: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_KEY');
-const PUNCHOUT_KEY: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_KEY');
 const PUNCHIN_MESSAGE_LINE: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_MESSAGE_LINE');
 const PUNCHIN_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHIN_MESSAGE_CHATWORK');
+const PUNCHOUT_KEY: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_KEY');
 const PUNCHOUT_MESSAGE_LINE: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_LINE');
 const PUNCHOUT_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_CHATWORK');
 const CHATWORK_API_TOKEN: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_API_TOKEN');
@@ -17,7 +17,6 @@ function doPost(e: string) {
     }
 
     let userId: string = event.source.userId;
-    // let nickName: string = getUserProfile(userId);
 
     if (event.type == 'message') {
         let userMessage: sttring = event.message.text;
