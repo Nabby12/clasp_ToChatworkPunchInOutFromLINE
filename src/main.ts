@@ -19,7 +19,7 @@ function doPost(e: string) {
     let userId: string = event.source.userId;
 
     if (event.type == 'message') {
-        let userMessage: sttring = event.message.text;
+        let userMessage: string = event.message.text;
 
         let replyMessageToChatwork: string = '';
         let replyMessageToLINE: string = '';
