@@ -7,6 +7,7 @@ const PUNCHOUT_MESSAGE_LINE: string = PropertiesService.getScriptProperties().ge
 const PUNCHOUT_MESSAGE_CHATWORK: string = PropertiesService.getScriptProperties().getProperty('PUNCHOUT_MESSAGE_CHATWORK');
 const CHATWORK_API_TOKEN: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_API_TOKEN');
 const CHATWORK_ROOMID: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_ROOMID');
+const CHATWORK_ROOMURL: string = PropertiesService.getScriptProperties().getProperty('CHATWORK_ROOMURL');
 
 function doPost(e: string) {
     let event = JSON.parse(e.postData.contents).events[0];
@@ -19,17 +20,19 @@ function doPost(e: string) {
     let userId: string = event.source.userId;
 
     if (event.type == 'message') {
-        let userMessage: string = event.message.text;
+        let userMessage: string = event.message.text.replace(/　/g, ' ').trim();
 
         let replyMessageToChatwork: string = '';
         let replyMessageToLINE: string = '';
 
         if (userMessage === PUNCHIN_KEY){
             replyMessageToChatwork = PUNCHIN_MESSAGE_CHATWORK;
-            replyMessageToLINE = PUNCHIN_MESSAGE_LINE;
+            replyMessageToLINE = `${ PUNCHIN_MESSAGE_LINE }\n ${ CHATWORK_ROOMURL + CHATWORK_ROOMID }`;
+    
         } else if (userMessage === PUNCHOUT_KEY) {
             replyMessageToChatwork = PUNCHOUT_MESSAGE_CHATWORK;
-            replyMessageToLINE = PUNCHOUT_MESSAGE_LINE;
+            replyMessageToLINE = `${ PUNCHOUT_MESSAGE_LINE }\n ${ CHATWORK_ROOMURL + CHATWORK_ROOMID }`;
+            
         }
 
         if (replyMessageToLINE === ''){
